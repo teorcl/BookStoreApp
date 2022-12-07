@@ -13,6 +13,7 @@
 		ABFAE6E6293FE1FB0015F51B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABFAE6E4293FE1FB0015F51B /* Main.storyboard */; };
 		ABFAE6E8293FE1FF0015F51B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABFAE6E7293FE1FF0015F51B /* Assets.xcassets */; };
 		ABFAE6EB293FE1FF0015F51B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABFAE6E9293FE1FF0015F51B /* LaunchScreen.storyboard */; };
+		ABFAE6F32940D5690015F51B /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFAE6F22940D5690015F51B /* SummaryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		ABFAE6E7293FE1FF0015F51B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABFAE6EA293FE1FF0015F51B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABFAE6EC293FE1FF0015F51B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABFAE6F22940D5690015F51B /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				ABFAE6E7293FE1FF0015F51B /* Assets.xcassets */,
 				ABFAE6E9293FE1FF0015F51B /* LaunchScreen.storyboard */,
 				ABFAE6EC293FE1FF0015F51B /* Info.plist */,
+				ABFAE6F22940D5690015F51B /* SummaryViewController.swift */,
 			);
 			path = BookStoreApp;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				ABFAE6E3293FE1FB0015F51B /* SalesViewController.swift in Sources */,
 				ABFAE6DF293FE1FB0015F51B /* AppDelegate.swift in Sources */,
 				ABFAE6E1293FE1FB0015F51B /* SceneDelegate.swift in Sources */,
+				ABFAE6F32940D5690015F51B /* SummaryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -61,7 +61,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="VRq-eB-4Hw" kind="presentation" id="EUl-v8-VO0"/>
+                                    <action selector="sellButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="J1Q-fE-ZM0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -78,6 +78,13 @@
                             <constraint firstItem="Cee-Jh-FOv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="zh3-vE-7mG"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bookNameTextField" destination="v9j-qN-f9m" id="rsb-w0-O8e"/>
+                        <outlet property="bookPriceTextField" destination="P1x-WO-gsS" id="cj2-ab-231"/>
+                        <outlet property="numberOfBookTextField" destination="vcM-2z-Wdm" id="JOz-hV-gOg"/>
+                        <outlet property="paymentMediumTextField" destination="GAl-TI-Oxz" id="WJH-KL-uvN"/>
+                        <segue destination="VRq-eB-4Hw" kind="presentation" identifier="goToSummary" modalPresentationStyle="fullScreen" id="Wug-PX-64K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -86,13 +93,13 @@
         <!--SalesSummary-->
         <scene sceneID="cHA-cI-8gC">
             <objects>
-                <viewController title="SalesSummary" id="VRq-eB-4Hw" sceneMemberID="viewController">
+                <viewController title="SalesSummary" id="VRq-eB-4Hw" customClass="SummaryViewController" customModule="BookStoreApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Mj-nI-wwS">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="u8f-xH-gmY">
-                                <rect key="frame" x="133" y="227.33333333333334" width="127.33333333333331" height="48.666666666666657"/>
+                                <rect key="frame" x="133" y="261.66666666666669" width="127.33333333333331" height="48.666666666666686"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título del libro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyr-tv-TTc">
                                         <rect key="frame" x="0.0" y="0.0" width="107.66666666666667" height="20.333333333333332"/>
@@ -109,22 +116,34 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="1Io-8h-YGw">
-                                <rect key="frame" x="80" y="296" width="233" height="153.33333333333337"/>
+                                <rect key="frame" x="80" y="330.33333333333331" width="233" height="153.33333333333331"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medio de pago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jch-Ac-B61">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medio de pago" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jch-Ac-B61">
                                         <rect key="frame" x="0.0" y="0.0" width="233" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoinsign.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PXc-Fj-24D">
-                                        <rect key="frame" x="0.0" y="24.333333333333314" width="233" height="128.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="24.333333333333371" width="233" height="128.66666666666669"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="130" id="KHd-hG-yR7"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                             </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W8E-LV-KwE">
+                                <rect key="frame" x="0.0" y="48" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="dSd-dF-Ok5"/>
+                                    <barButtonItem title="Realizar otra compra" id="85k-l2-YVJ">
+                                        <connections>
+                                            <action selector="onMakeANewPurchaseTapped:" destination="VRq-eB-4Hw" id="iO0-fX-gTu"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DDh-mX-r9h"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -136,6 +155,11 @@
                             <constraint firstItem="DDh-mX-r9h" firstAttribute="trailing" secondItem="1Io-8h-YGw" secondAttribute="trailing" constant="80" id="nb5-eI-M8F"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bookNameLabel" destination="gyr-tv-TTc" id="fHu-PC-CFw"/>
+                        <outlet property="moneyImageView" destination="PXc-Fj-24D" id="7Na-FU-Uh1"/>
+                        <outlet property="totalCollectLabel" destination="BOy-x5-4OI" id="BDT-DT-2g3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jhT-KE-N6a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
